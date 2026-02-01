@@ -7,7 +7,7 @@ import { apiClient } from "../utils/axios";
 
 const Feed = () => {
   const { feed, setFeed, removeFromFeed } = feedStore();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right" | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 

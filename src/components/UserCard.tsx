@@ -25,7 +25,7 @@ const UserCard = ({ user, onAction }: UserCardProps) => {
   const sendConnection = async (action: string) => {
     setIsLoading(action);
     try {
-      const res = await apiClient.post(`connection/connect/${action}/${user._id}`);
+      await apiClient.post(`connection/connect/${action}/${user._id}`);
       toast.success(
         action === "interested" 
           ? `You liked ${user.firstName}! 💖` 
