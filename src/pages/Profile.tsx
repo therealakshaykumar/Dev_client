@@ -184,10 +184,6 @@ const Profile = () => {
       variants={containerVariants}
     >
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div className="text-center mb-10" variants={itemVariants}>
-          <p className="text-gray-500">Manage your personal information</p>
-        </motion.div>
 
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row items-start justify-center gap-8">

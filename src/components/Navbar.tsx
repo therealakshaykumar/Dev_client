@@ -166,7 +166,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-            🔥<span>GiTogether</span>
+          <img className="w-6 h-6" src="/logo.svg" alt="" /><span>GiTogether</span>
         </motion.a>
       </div>
 
