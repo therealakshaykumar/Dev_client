@@ -125,7 +125,7 @@ const Signup = () => {
           <h1 className="text-3xl font-bold bg-linear-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
             Create Account
           </h1>
-          <p className="text-gray-500 mt-2">Join DevTinder today</p>
+          <p className="text-gray-500 mt-2">Join GiTogether today</p>
         </motion.div>
 
         {/* Form */}
