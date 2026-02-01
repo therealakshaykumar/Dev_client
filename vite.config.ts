@@ -7,6 +7,10 @@ export default defineConfig(({ mode }) => {
   
   return {
     plugins: [react(), tailwindcss()],
+    build: {
+      outDir: 'dist',
+      sourcemap: false,
+    },
     server: {
       proxy: {
         '/api': {
@@ -17,8 +21,8 @@ export default defineConfig(({ mode }) => {
         }
       }
     },
-    define: {
-      __API_URL__: JSON.stringify(env.VITE_API_URL)
-    }
+    // define: {
+    //   __API_URL__: JSON.stringify(env.VITE_API_URL)
+    // }
   }
 })
