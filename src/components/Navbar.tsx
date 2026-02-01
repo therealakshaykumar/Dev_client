@@ -10,24 +10,21 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const { user, setUser, isLoading } = useStore(userStore);
+  const { user, isLoading, clearUser } = useStore(userStore);
   const navigate = useNavigate();
   const { scrollY } = useScroll();
 
   const {requests} = useStore(requestStore)
 
-  // Track scroll direction to hide/show navbar
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     
-    // Show glass effect when scrolled
     if (latest > 50) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
     }
 
-    // Hide navbar when scrolling down, show when scrolling up
     if (latest > previous && latest > 150) {
       setIsHidden(true);
     } else {
@@ -42,22 +39,20 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await apiClient.post("/auth/logout");
-      setUser(null);
+      clearUser();
       setIsDropdownOpen(false);
       navigate("/login");
     } catch (error) {
       console.error("Logout error:", error);
-      setUser(null);
+      clearUser();
       navigate("/login");
     }
   };
 
-  // Get user image with fallback
   const userImage =
     user?.imageUrl ||
     "https://www.svgrepo.com/show/384670/account-avatar-profile-user.svg";
 
-  // Animation variants
   const navbarVariants = {
     visible: {
       y: 0,
