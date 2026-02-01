@@ -18,7 +18,7 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       navigate('/feed');}
-  }, [user]);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
