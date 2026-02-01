@@ -74,7 +74,7 @@ const UserCard = ({ user, onAction }: UserCardProps) => {
         className="w-full h-full object-cover"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
       <motion.div
         className="absolute bottom-0 left-0 right-0 p-6"
@@ -113,7 +113,7 @@ const UserCard = ({ user, onAction }: UserCardProps) => {
           <motion.button
             onClick={() => sendConnection("interested")}
             disabled={isLoading !== null || actionTaken !== null}
-            className="w-16 h-16 rounded-full bg-gradient-to-r from-pink to-orange shadow-lg shadow-pink/40 flex items-center justify-center text-white disabled:opacity-50 cursor-pointer"
+            className="w-16 h-16 rounded-full bg-linear-to-r from-pink to-orange shadow-lg shadow-pink/40 flex items-center justify-center text-white disabled:opacity-50 cursor-pointer"
             whileHover={{ scale: 1.15 }}
             whileTap={{ scale: 0.9 }}
           >

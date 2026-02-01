@@ -8,8 +8,8 @@ import toast from "react-hot-toast";
 import { AxiosError } from "axios";
 
 const Login = () => {
-  const [email, setEmail] = useState("akshay@kumar.com");
-  const [password, setPassword] = useState("12345");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate()
 
@@ -108,7 +108,7 @@ const Login = () => {
           </motion.button>
         </form>
 
-        <p className="text-center text-gray-600 text-sm mt-6">
+        <p className="text-center text-gray-600 text-sm mt-6 cursor-pointer">
           Don't have an account?{" "}
           <a onClick={()=>navigate('/signup')} className="text-pink-600 font-medium hover:underline">
             Sign up here

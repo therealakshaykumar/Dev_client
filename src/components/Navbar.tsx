@@ -144,7 +144,7 @@ const Navbar = () => {
       `}
     >
       <motion.div
-        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-pink via-orange to-pink"
+        className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-pink via-orange to-pink"
         initial={{ scaleX: 0, opacity: 0 }}
         animate={{
           scaleX: isScrolled ? 1 : 0,
@@ -159,7 +159,7 @@ const Navbar = () => {
           onClick={() => navigate("/feed")}
           className="
             px-4 py-2 text-xl rounded-lg inline-flex items-center gap-2
-            bg-gradient-to-r from-pink to-orange font-bold
+            bg-linear-to-r from-pink to-orange font-bold
             bg-clip-text text-transparent cursor-pointer
             select-none
           "
@@ -174,7 +174,7 @@ const Navbar = () => {
       <div className="flex items-center justify-end gap-3 flex-1 cursor-pointer">
         {isLoading ? (
           <motion.div
-            className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-200 to-gray-300  cursor-pointer"
+            className="w-10 h-10 rounded-full bg-linear-to-r from-gray-200 to-gray-300  cursor-pointer"
             animate={{
               opacity: [0.5, 1, 0.5],
             }}
@@ -292,7 +292,7 @@ const Navbar = () => {
                           navigate("/profile");
                         }}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-pink/10 to-orange/10 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-pink/10 to-orange/10 flex items-center justify-center">
                           <svg
                             className="w-4 h-4 text-pink"
                             fill="none"
@@ -320,7 +320,7 @@ const Navbar = () => {
                           navigate("/connections");
                         }}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center">
                           <svg
                             className="w-4 h-4 text-blue-500"
                             fill="none"
@@ -348,7 +348,7 @@ const Navbar = () => {
                           navigate("/requests");
                         }}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500/10 to-indigo-500/10 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-purple-500/10 to-indigo-500/10 flex items-center justify-center">
                           <svg
                             className="w-4 h-4 text-purple-500"
                             fill="none"
@@ -408,7 +408,7 @@ const Navbar = () => {
           </div>
         ) : (
           <motion.button
-            className="px-5 py-2.5 bg-gradient-to-r from-pink to-orange text-white font-medium rounded-xl shadow-lg shadow-pink/25"
+            className="px-5 py-2.5 bg-linear-to-r from-pink to-orange text-white font-medium rounded-xl shadow-lg shadow-pink/25 cursor-pointer"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 40px -10px rgba(254, 60, 114, 0.5)" }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/login")}

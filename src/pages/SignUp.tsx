@@ -7,10 +7,10 @@ import { AxiosError } from "axios";
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    firstName: "Akshay",
-    lastName: "Kumar",
-    email: "akshaykumarm@gmail.com",
-    password: "Akshay@123",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
   });
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -41,7 +41,6 @@ const Signup = () => {
     }
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -77,7 +76,6 @@ const Signup = () => {
 
   return (
     <div className="min-h-[calc(100vh-1px)] flex items-center justify-center bg-linear-to-br from-pink-50 via-purple-50 to-indigo-50 px-4 py-12">
-      {/* Background Decorations */}
       <motion.div
         className="absolute top-20 left-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
         animate={{
@@ -103,7 +101,6 @@ const Signup = () => {
         }}
       />
 
-      {/* Main Card */}
       <motion.div
         className="relative bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl p-8 w-full max-w-md border border-white/20"
         initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -115,7 +112,6 @@ const Signup = () => {
         }}
       >
 
-        {/* Header */}
         <motion.div
           className="text-center mb-8"
           initial={{ opacity: 0, y: -10 }}
@@ -128,7 +124,6 @@ const Signup = () => {
           <p className="text-gray-500 mt-2">Join GiTogether today</p>
         </motion.div>
 
-        {/* Form */}
         <motion.form
           onSubmit={handleSubmit}
           className="space-y-5"
@@ -136,9 +131,7 @@ const Signup = () => {
           initial="hidden"
           animate="visible"
         >
-          {/* Name Row - First & Last Name */}
           <div className="grid grid-cols-2 gap-4">
-            {/* First Name */}
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="firstName"
@@ -163,7 +156,6 @@ const Signup = () => {
               </div>
             </motion.div>
 
-            {/* Last Name */}
             <motion.div variants={itemVariants}>
               <label
                 htmlFor="lastName"
@@ -189,7 +181,6 @@ const Signup = () => {
             </motion.div>
           </div>
 
-          {/* Email Field */}
           <motion.div variants={itemVariants}>
             <label
               htmlFor="email"
@@ -214,7 +205,6 @@ const Signup = () => {
             </div>
           </motion.div>
 
-          {/* Password Field */}
           <motion.div variants={itemVariants}>
             <label
               htmlFor="password"
@@ -272,7 +262,6 @@ const Signup = () => {
             </label>
           </motion.div> */}
 
-          {/* Submit Button */}
           <motion.button
             type="submit"
             disabled={isLoading}
@@ -282,7 +271,6 @@ const Signup = () => {
             whileHover="hover"
             whileTap="tap"
           >
-            {/* Button Shimmer Effect */}
             <motion.div
               className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent"
               animate={{ x: ["-100%", "100%"] }}
@@ -297,7 +285,6 @@ const Signup = () => {
 
         </motion.form>
 
-        {/* Login Link */}
         <motion.p
           className="text-center text-gray-600 text-sm mt-8"
           initial={{ opacity: 0 }}

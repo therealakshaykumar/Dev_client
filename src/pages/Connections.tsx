@@ -125,7 +125,7 @@ const Connections = () => {
   // Loading State
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20 px-4">
+      <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 pt-20 px-4">
         <div className="max-w-2xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
@@ -160,7 +160,7 @@ const Connections = () => {
               >
                 <div className="flex items-center gap-4">
                   <motion.div
-                    className="w-14 h-14 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full"
+                    className="w-14 h-14 bg-linear-to-br from-gray-200 to-gray-300 rounded-full"
                     animate={{
                       scale: [1, 1.05, 1],
                     }}
@@ -186,7 +186,7 @@ const Connections = () => {
   // Empty State
   if (!connections || connections.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
+      <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4">
         <motion.div
           className="text-center"
           variants={emptyStateVariants}
@@ -197,7 +197,7 @@ const Connections = () => {
           <motion.div className="relative w-32 h-32 mx-auto mb-8">
             {/* ✅ Fixed: Use animate prop directly for pulse */}
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-violet-100 to-purple-100 rounded-full"
+              className="absolute inset-0 bg-linear-to-br from-violet-100 to-purple-100 rounded-full"
               animate={{
                 scale: [1, 1.05, 1],
                 opacity: [0.5, 0.8, 0.5],
@@ -245,7 +245,7 @@ const Connections = () => {
 
           <motion.button
             onClick={() => navigate('/feed')}
-            className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-violet-500/30"
+            className="group relative inline-flex items-center gap-2 bg-linear-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-violet-500/30"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -273,7 +273,7 @@ const Connections = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20 pb-10 px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 pt-20 pb-10 px-4">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <motion.div
@@ -338,7 +338,7 @@ const Connections = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white text-xl md:text-2xl font-bold shadow-lg">
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-linear-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white text-xl md:text-2xl font-bold shadow-lg">
                       {connection.fromUserId?.firstName?.charAt(0).toUpperCase()}
                     </div>
 

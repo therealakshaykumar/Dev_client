@@ -178,7 +178,7 @@ const Profile = () => {
 
   return (
     <motion.div
-      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-4 px-4 mt-15"
+      className="min-h-screen bg-linear-to-br from-gray-50 via-white to-gray-100 py-4 px-4 mt-15"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -203,7 +203,7 @@ const Profile = () => {
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.8 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
                 <motion.div
                   className="absolute bottom-0 left-0 right-0 p-6"
@@ -225,7 +225,7 @@ const Profile = () => {
                   className="flex items-center gap-3"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink to-orange flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-linear-to-r from-pink to-orange flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-white"
                       fill="none"
@@ -252,7 +252,7 @@ const Profile = () => {
                   className="flex items-center gap-3"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink to-orange flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-linear-to-r from-pink to-orange flex items-center justify-center">
                     <svg
                       className="w-5 h-5 text-white"
                       fill="none"
@@ -279,7 +279,7 @@ const Profile = () => {
                   className="flex items-start gap-3"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink to-orange flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-linear-to-r from-pink to-orange flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-5 h-5 text-white"
                       fill="none"
@@ -320,7 +320,7 @@ const Profile = () => {
                       setPreview("");
                     }
                   }}
-                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-pink to-orange text-white font-medium text-sm sm:text-base"
+                  className="px-4 py-2 rounded-xl bg-linear-to-r from-pink to-orange text-white font-medium text-sm sm:text-base"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -454,7 +454,7 @@ const Profile = () => {
                           type="button"
                           onClick={handleGenerateBio}
                           disabled={isGeneratingBio}
-                          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-r from-purple-500 to-indigo-500 text-white text-xs font-medium shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-linear-to-r from-purple-500 to-indigo-500 text-white text-xs font-medium shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >
@@ -519,7 +519,7 @@ const Profile = () => {
                               initial={{ opacity: 0 }}
                               animate={{ opacity: 1 }}
                               exit={{ opacity: 0 }}
-                              className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-indigo-500/10 rounded-xl flex items-center justify-center backdrop-blur-[1px]"
+                              className="absolute inset-0 bg-linear-to-r from-purple-500/10 to-indigo-500/10 rounded-xl flex items-center justify-center backdrop-blur-[1px]"
                             >
                               <div className="flex items-center gap-2 text-purple-600">
                                 <motion.div
@@ -561,7 +561,7 @@ const Profile = () => {
                     <motion.button
                       type="submit"
                       disabled={isLoading}
-                      className="w-full py-4 rounded-xl bg-gradient-to-r from-pink to-orange text-white font-bold text-lg shadow-lg shadow-pink/25 disabled:opacity-50 cursor-pointer"
+                      className="w-full py-4 rounded-xl bg-linear-to-r from-pink to-orange text-white font-bold text-lg shadow-lg shadow-pink/25 disabled:opacity-50 cursor-pointer"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                     >

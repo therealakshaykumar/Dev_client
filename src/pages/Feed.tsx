@@ -104,7 +104,7 @@ const Feed = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen pt-20 flex items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50">
+      <div className="min-h-screen pt-20 flex items-center justify-center bg-linear-to-br from-pink-50 to-purple-50">
         <motion.div
           className="w-16 h-16 border-4 border-pink-500 border-t-transparent rounded-full"
           animate={{ rotate: 360 }}
@@ -116,13 +116,13 @@ const Feed = () => {
 
   if (feed.length === 0) {
     return (
-      <div className="min-h-screen pt-24 flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50 px-4">
+      <div className="min-h-screen pt-24 flex flex-col items-center justify-center bg-linear-to-br from-pink-50 to-purple-50 px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           className="text-center"
         >
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-pink-100 to-purple-100 flex items-center justify-center">
+          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-linear-to-br from-pink-100 to-purple-100 flex items-center justify-center">
             <svg
               className="w-16 h-16 text-pink-400"
               fill="none"
@@ -147,7 +147,7 @@ const Feed = () => {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-8 flex flex-col items-center justify-center bg-gradient-to-br from-pink-50 to-purple-50 px-4">
+    <div className="min-h-screen pt-24 pb-8 flex flex-col items-center justify-center bg-linear-to-br from-pink-50 to-purple-50 px-4">
       <div className="relative w-full max-w-sm h-[500px] sm:h-[550px]">
         <AnimatePresence custom={direction}>
           {feed
@@ -188,7 +188,7 @@ const Feed = () => {
                         className="w-full h-full object-cover"
                         draggable={false}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
                       <motion.div
                         className="absolute top-4 left-4 px-4 py-2 bg-green-500 text-white font-bold rounded-lg rotate-[-15deg]"
@@ -286,7 +286,7 @@ const Feed = () => {
 
                         <motion.button
                           onClick={() => handleSwipe("right")}
-                          className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 flex items-center justify-center shadow-lg shadow-pink-500/30"
+                          className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-linear-to-r from-pink-500 to-rose-500 flex items-center justify-center shadow-lg shadow-pink-500/30"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
