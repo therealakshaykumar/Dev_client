@@ -4,8 +4,6 @@ import { useStore } from "zustand";
 import { userStore } from "../store/userStore";
 import { useEffect } from "react";
 import { apiClient } from "../utils/axios";
-import { AxiosError } from "axios";
-import toast from "react-hot-toast";
 
 const Body = () => {
   const { user, setUser, setIsLoading, isLoading } = useStore(userStore);
