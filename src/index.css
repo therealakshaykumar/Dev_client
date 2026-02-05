@@ -9,3 +9,7 @@
 *{
   font-family: "SN Pro", sans-serif;
 }
+
+button{
+  cursor: pointer;
+}

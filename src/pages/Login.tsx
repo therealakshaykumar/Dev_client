@@ -41,7 +41,19 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-[-61.6px] min-h-screen flex items-center justify-center bg-linear-to-br from-pink-50 to-purple-50 px-4">
+    <div className=" min-h-screen flex items-center justify-center bg-linear-to-br from-pink-50 to-purple-50 px-4">
+      <motion.div
+              className="absolute top-25 left-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+              animate={{
+                x: [0, 30, 0],
+                y: [0, 20, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            />
       <motion.div
         className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md"
         initial={{ opacity: 0, y: 20 }}
