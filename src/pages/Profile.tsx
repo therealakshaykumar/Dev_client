@@ -59,7 +59,7 @@ const Profile = () => {
 
   const handleGenerateBio = async () => {
     if (!formData.firstName) {
-      alert("Please enter your first name to generate bio");
+      toast.custom("Please enter your first name to generate bio");
       return;
     }
 
@@ -89,7 +89,6 @@ const Profile = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-
     try {
       const data = new FormData();
       data.append("firstName", formData.firstName);
@@ -116,8 +115,9 @@ const Profile = () => {
         setSelectedFile(null);
         setPreview("");
       }
-    } catch (error) {
-      console.error("Update error:", error);
+    } catch (error:any) {
+      console.error("Update error:", error.response.data.data);
+      toast.error(error.response.data.message ?? 'Something went wrong')
     } finally {
       setIsLoading(false);
     }
@@ -439,19 +439,7 @@ const Profile = () => {
                           type="date"
                           name="dob"
                           value={formData.dob}
-                          onChange={e=>{
-                            const selectedDate = new Date(e.target.value);
-                              const today = new Date();
-                              today.setHours(0, 0, 0, 0);
-                              
-                              if (selectedDate > today) {
-                                toast.error('Date of birth cannot be in the future');
-                                return;
-                              }
-                              
-                              handleChange(e);
-                          }}
-                          max={new Date().toISOString().split('T')[0]}
+                          onChange={handleChange}
                           className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:outline-none focus:border-pink focus:ring-2 focus:ring-pink/20 transition-all"
                         />
                       </div>
