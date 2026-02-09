@@ -11,6 +11,7 @@ const Signup = () => {
     lastName: "",
     email: "",
     password: "",
+    passwordVerified: ""
   });
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Signup = () => {
 
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
+    if(formData.password !== formData.passwordVerified) return toast.error(`Verify password doesn't match`)
     setIsLoading(true);
     try {
         const data = await apiClient.post(`/auth/signup`, formData);
@@ -40,6 +42,10 @@ const Signup = () => {
       setIsLoading(false);
     }
   };
+
+  const handleVerifyPassword = ()=>{
+
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -140,9 +146,6 @@ const Signup = () => {
                 First Name
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                  👤
-                </span>
                 <input
                   id="firstName"
                   name="firstName"
@@ -151,7 +154,7 @@ const Signup = () => {
                   onChange={handleChange}
                   placeholder="John"
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
                 />
               </div>
             </motion.div>
@@ -164,9 +167,6 @@ const Signup = () => {
                 Last Name
               </label>
               <div className="relative">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                  👤
-                </span>
                 <input
                   id="lastName"
                   name="lastName"
@@ -175,7 +175,7 @@ const Signup = () => {
                   onChange={handleChange}
                   placeholder="Doe"
                   required
-                  className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
                 />
               </div>
             </motion.div>
@@ -189,9 +189,6 @@ const Signup = () => {
               Email Address
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                ✉️
-              </span>
               <input
                 id="email"
                 name="email"
@@ -200,7 +197,7 @@ const Signup = () => {
                 onChange={handleChange}
                 placeholder="you@example.com"
                 required
-                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
               />
             </div>
           </motion.div>
@@ -213,9 +210,6 @@ const Signup = () => {
               Password
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                🔒
-              </span>
               <input
                 id="password"
                 name="password"
@@ -225,7 +219,7 @@ const Signup = () => {
                 placeholder="••••••••"
                 required
                 minLength={6}
-                className="w-full pl-10 pr-12 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
               />
               <motion.button
                 type="button"
@@ -234,7 +228,7 @@ const Signup = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                {showPassword ? "🙈" : "👁️"}
+                {showPassword ? <span className="text-xs">Hide</span> : <span className="text-xs">Show</span>}
               </motion.button>
             </div>
             <p className="text-xs text-gray-400 mt-1">
@@ -242,25 +236,27 @@ const Signup = () => {
             </p>
           </motion.div>
 
-          {/* Terms & Conditions */}
-          {/* <motion.div variants={itemVariants} className="flex items-start gap-2">
-            <input
-              type="checkbox"
-              id="terms"
-              required
-              className="mt-1 w-4 h-4 rounded border-gray-300 text-pink-600 focus:ring-pink-500"
-            />
-            <label htmlFor="terms" className="text-sm text-gray-600">
-              I agree to the{" "}
-              <a href="#" className="text-pink-600 hover:underline">
-                Terms of Service
-              </a>{" "}
-              and{" "}
-              <a href="#" className="text-pink-600 hover:underline">
-                Privacy Policy
-              </a>
+          <motion.div variants={itemVariants}>
+            <label
+              htmlFor="passwordVerified"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
+             Verify Password
             </label>
-          </motion.div> */}
+            <div className="relative">
+              <input
+                id="passwpasswordVerifiedordV"
+                name="passwordVerified"
+                type={showPassword ? "text" : "password"}
+                placeholder="••••••••"
+                required
+                minLength={6}
+                value={formData.passwordVerified}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all duration-200 bg-gray-50/50 hover:bg-white"
+              />
+            </div>
+          </motion.div>
 
           <motion.button
             type="submit"

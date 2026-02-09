@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { userStore } from "../store/userStore";
 import { apiClient } from "../utils/axios";
 import { formatDateForDisplay, formatDateForInput } from "../utils/formatDate";
+import toast from "react-hot-toast";
 
 const Profile = () => {
   const { user, setUser } = useStore(userStore);
@@ -438,7 +439,19 @@ const Profile = () => {
                           type="date"
                           name="dob"
                           value={formData.dob}
-                          onChange={handleChange}
+                          onChange={e=>{
+                            const selectedDate = new Date(e.target.value);
+                              const today = new Date();
+                              today.setHours(0, 0, 0, 0);
+                              
+                              if (selectedDate > today) {
+                                toast.error('Date of birth cannot be in the future');
+                                return;
+                              }
+                              
+                              handleChange(e);
+                          }}
+                          max={new Date().toISOString().split('T')[0]}
                           className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 focus:outline-none focus:border-pink focus:ring-2 focus:ring-pink/20 transition-all"
                         />
                       </div>

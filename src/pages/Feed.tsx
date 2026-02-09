@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, type PanInfo } from "framer-motion";
-import axios from "axios";
-import { BASE_URL } from "../utils/constant";
 import { feedStore } from "../store/feedStore";
 import { apiClient } from "../utils/axios";
 
@@ -18,12 +16,12 @@ const Feed = () => {
     }
     try {
       setIsLoading(true);
-      const res = await axios.get(`${BASE_URL}/connection/feed`, {
+      const res = await apiClient.get(`/connection/feed`, {
         withCredentials: true,
       });
       setFeed(res.data.feed);
-    } catch (error) {
-      console.error("Failed to fetch feed:", error);
+    } catch (error:any) {
+      console.error("Failed to fetch feed:", error.response);
     } finally {
       setIsLoading(false);
     }
