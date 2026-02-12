@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import Connections from "./pages/Connections";
 import Requests from "./pages/Requests";
 import Landing from "./pages/Landing";
+import Chat from "./pages/Chat";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
               <Route path="/feed" element={<Feed />} />
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
+              <Route path="/chat/:toUserId" element={<Chat />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />

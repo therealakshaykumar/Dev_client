@@ -33,7 +33,7 @@ const Login = () => {
       setIsLoading(false);
       if (error instanceof AxiosError) {
         const errorMessage =
-          error.response?.data || "Please try again.";
+          error.response?.data?.message || "Please try again.";
         toast.error(errorMessage);
         console.error("Backend error:", error.response);
       } else {
