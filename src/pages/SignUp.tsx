@@ -43,10 +43,6 @@ const Signup = () => {
     }
   };
 
-  const handleVerifyPassword = ()=>{
-
-  }
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
