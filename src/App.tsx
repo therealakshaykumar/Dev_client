@@ -10,6 +10,7 @@ import Connections from "./pages/Connections";
 import Requests from "./pages/Requests";
 import Landing from "./pages/Landing";
 import Chat from "./pages/Chat";
+import Review from "./pages/Review";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/connections" element={<Connections />} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/chat/:toUserId" element={<Chat />} />
+              <Route path="/review" element={<Review />} />
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
