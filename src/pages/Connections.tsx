@@ -213,6 +213,7 @@ const Connections = () => {
               variants={iconVariants}
               whileHover="hover"
             >
+
               <svg
                 className="w-12 h-12 text-violet-400"
                 fill="none"
@@ -338,9 +339,12 @@ const Connections = () => {
                     whileHover={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-linear-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white text-xl md:text-2xl font-bold shadow-lg">
-                      {connection.fromUserId?.firstName?.charAt(0).toUpperCase()}
-                    </div>
+                    {
+                      connection?.imageUrl ? <img className="w-14 h-14 md:w-16 md:h-16 rounded-full" src={connection?.imageUrl} alt="" /> : (<div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-linear-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white text-xl md:text-2xl font-bold shadow-lg">
+                      {connection?.firstName?.charAt(0).toUpperCase()}
+                    </div>)
+                    }
+                    
 
                     {/* Online indicator with pulse */}
                     <motion.div
@@ -363,15 +367,15 @@ const Connections = () => {
                       whileHover={{ color: "#7C3AED", x: 5 }}
                       transition={{ duration: 0.2 }}
                     >
-                      {connection.fromUserId?.firstName}{" "}
-                      {connection.fromUserId?.lastName}
+                      {connection?.firstName}{" "}
+                      {connection?.lastName}
                     </motion.h3>
                     <motion.p
                       className="text-gray-500 text-sm md:text-base truncate"
                       initial={{ opacity: 0.7 }}
                       whileHover={{ opacity: 1 }}
                     >
-                      {connection.fromUserId?.email}
+                      {connection?.email}
                     </motion.p>
                   </div>
 
@@ -399,7 +403,7 @@ const Connections = () => {
                         d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                       />
                     </svg>
-                    <span onClick={()=> navigate(`/chat/${connection.toUserId._id}`)}>Message</span>
+                    <span onClick={()=> navigate(`/chat/${connection._id}`)}>Message</span>
                   </motion.button>
 
                   {/* Action Button - Mobile */}
