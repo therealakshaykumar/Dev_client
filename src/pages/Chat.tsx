@@ -18,6 +18,7 @@ const Chat = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<IMessage[]>([]);
   const [loading, setLoading] = useState(true);
+  const [userName,setUserName] = useState('')
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,6 +31,8 @@ const Chat = () => {
     const getMessages = async () => {
       try {
         setLoading(true);
+        const USER = await apiClient.get(`/user/profile/${toUserId}`)
+        if(USER) setUserName(USER.data.firstName)
         const messageData = await apiClient.get(`/chat/all/${toUserId}`);
         console.log("API Response:", messageData.data.messages[0]);
 
@@ -116,9 +119,10 @@ const Chat = () => {
         animate={{ y: 0, opacity: 1 }}
         className="bg-pink text-white p-4 flex items-center shadow-md z-10"
       >
-        <div className="w-10 h-10 bg-gray-300 rounded-full mr-3 border border-white/20" />
+        {/* <div className="w-10 h-10 bg-gray-300 rounded-full mr-3 border border-white/20" /> */}
+        <img src={user.imageUrl} alt="" className="w-10 h-10 rounded-full mr-3 border border-white/20" />
         <div>
-          <h2 className="font-bold text-sm">User: {toUserId?.slice(-6)}</h2>
+          <h2 className="font-bold text-sm">{userName}</h2>
           <span className="text-[10px] opacity-80">online</span>
         </div>
       </motion.div>
