@@ -8,7 +8,6 @@ export const connectSocket = (): Socket => {
   }else{
     socket = io(BASE_URL, {
       path: '/api/socket.io',
-      transports: ['websocket','polling'],
       secure: true
     });
   }
