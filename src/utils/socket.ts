@@ -9,7 +9,9 @@ export const connectSocket = (): Socket => {
     socket = io(BASE_URL, {
       // withCredentials: true,
       autoConnect: true,
-      path: '/api/socket.io'
+      path: '/api/socket.io',
+      transports: ['websocket'],
+      secure: true
     });
   }
   return socket;
