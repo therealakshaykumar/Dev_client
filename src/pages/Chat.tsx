@@ -120,7 +120,7 @@ const Chat = () => {
         className="bg-pink text-white p-4 flex items-center shadow-md z-10"
       >
         {/* <div className="w-10 h-10 bg-gray-300 rounded-full mr-3 border border-white/20" /> */}
-        <img src={user.imageUrl} alt="" className="w-10 h-10 rounded-full mr-3 border border-white/20" />
+        <img src={user?.imageUrl ?? 'men.svg'} alt="" className="w-10 h-10 rounded-full mr-3 border border-white/20" />
         <div>
           <h2 className="font-bold text-sm">{userName}</h2>
           <span className="text-[10px] opacity-80">online</span>

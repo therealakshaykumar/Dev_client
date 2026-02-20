@@ -175,7 +175,7 @@ const Profile = () => {
     preview ||
     formData.imageUrl ||
     user.imageUrl ||
-    "https://www.svgrepo.com/show/384670/account-avatar-profile-user.svg";
+    "men.svg";
 
   return (
     <motion.div
