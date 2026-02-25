@@ -20,7 +20,6 @@ export const connectSocket = (): Socket => {
         : `${location.protocol}//${location.host}`;
     //    ↑ This gives: https://gitogether.duckdns.org
 
-    console.log("🔌 Connecting to:", SOCKET_URL);
 
     socket = io(SOCKET_URL, {
         // ✅ FIX: Default path — NOT /api/socket.io

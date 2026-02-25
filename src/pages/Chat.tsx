@@ -34,7 +34,6 @@ const Chat = () => {
         const USER = await apiClient.get(`/user/profile/${toUserId}`)
         if(USER) setUserName(USER.data.firstName)
         const messageData = await apiClient.get(`/chat/all/${toUserId}`);
-        console.log("API Response:", messageData.data.messages[0]);
 
         // ✅ FIX: senderId is an OBJECT { _id, firstName, lastName }
         // Extract senderId._id to get the actual string ID
@@ -45,9 +44,6 @@ const Chat = () => {
           message: msg.text,      // ← your API uses "text", not "message"
           timestamp: new Date(msg.createdAt).getTime(),
         }));
-
-        console.log("Mapped messages:", fetchedMessages);
-        console.log("Current user ID:", user._id);
 
         setMessages(fetchedMessages);
       } catch (error) {
