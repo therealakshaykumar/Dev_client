@@ -215,7 +215,7 @@ const Connections = () => {
             >
 
               <svg
-                className="w-12 h-12 text-violet-400"
+                className="w-12 h-12 text-pink"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -246,7 +246,7 @@ const Connections = () => {
 
           <motion.button
             onClick={() => navigate('/feed')}
-            className="group relative inline-flex items-center gap-2 bg-linear-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-violet-500/30"
+            className="group relative inline-flex items-center gap-2 bg-linear-to-r from-pink to-pink text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-pink-500/30"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -284,7 +284,7 @@ const Connections = () => {
           animate="visible"
         >
           <motion.h1
-            className="text-2xl md:text-3xl font-bold text-gray-800"
+            className="text-2xl md:text-3xl font-bold text-pink-800"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
@@ -330,7 +330,7 @@ const Connections = () => {
                   y: -5,
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
                 }}
-                className="group bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 hover:border-violet-200 cursor-pointer"
+                className="group bg-white rounded-2xl p-4 md:p-6 shadow-sm border border-gray-100 hover:border-pink-200 cursor-pointer"
               >
                 <div className="flex items-center gap-4">
                   {/* Avatar */}
@@ -364,7 +364,7 @@ const Connections = () => {
                   <div className="flex-1 min-w-0">
                     <motion.h3
                       className="text-lg md:text-xl font-semibold text-gray-800 truncate"
-                      whileHover={{ color: "#7C3AED", x: 5 }}
+                      whileHover={{ color: "#8B0A50", x: 5 }}
                       transition={{ duration: 0.2 }}
                     >
                       {connection?.firstName}{" "}
@@ -383,8 +383,8 @@ const Connections = () => {
                   <motion.button
                     className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-600 font-medium"
                     whileHover={{
-                      backgroundColor: "#EDE9FE",
-                      color: "#7C3AED",
+                      backgroundColor: "rgba(139, 10, 80, 0.1)",
+                      color: "#8B0A50",
                       scale: 1.05,
                     }}
                     whileTap={{ scale: 0.95 }}

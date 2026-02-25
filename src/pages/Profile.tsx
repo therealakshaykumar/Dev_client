@@ -335,7 +335,7 @@ const Profile = () => {
                   className="flex items-center gap-3"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-pink flex items-center justify-center flex-shrink-0">
                     <GitHubIcon className="w-5 h-5 text-white" />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -379,7 +379,7 @@ const Profile = () => {
                   className="flex items-center gap-3"
                   variants={itemVariants}
                 >
-                  <div className="w-10 h-10 rounded-full bg-[#0077B5] flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-full bg-pink flex items-center justify-center flex-shrink-0">
                     <LinkedInIcon className="w-5 h-5 text-white" />
                   </div>
                   <div className="min-w-0 flex-1">
@@ -453,7 +453,7 @@ const Profile = () => {
           <motion.div className="w-full lg:w-[500px]" variants={itemVariants}>
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-gray-200 shadow-xl">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+                <h2 className="text-xl sm:text-2xl font-bold text-pink-800">
                   {isEditing ? "Edit Profile" : "Profile Details"}
                 </h2>
                 <motion.button
@@ -665,7 +665,7 @@ const Profile = () => {
                           type="button"
                           onClick={handleGenerateBio}
                           disabled={isGeneratingBio}
-                          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-linear-to-r from-purple-500 to-indigo-500 text-white text-xs font-medium shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-linear-to-r from-pink-500 to-pink-500 text-white text-xs font-medium shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                         >

@@ -243,7 +243,7 @@ const Requests = () => {
               whileHover="hover"
             >
               <svg
-                className="w-12 h-12 text-violet-400"
+                className="w-12 h-12 text-pink"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -274,7 +274,7 @@ const Requests = () => {
 
           <motion.button
             onClick={() => navigate("/feed")}
-            className="group relative inline-flex items-center gap-2 bg-linear-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-violet-500/30"
+            className="group relative inline-flex items-center gap-2 bg-linear-to-r from-pink to-pink text-white px-8 py-3 rounded-full font-medium"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"

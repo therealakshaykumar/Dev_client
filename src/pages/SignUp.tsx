@@ -120,7 +120,7 @@ const Signup = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h1 className="text-3xl font-bold bg-linear-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl font-bold bg-linear-to-r from-pink-600 to-pink-600 bg-clip-text text-transparent">
             Create Account
           </h1>
           <p className="text-gray-500 mt-2">Join GiTogether today</p>
@@ -257,7 +257,7 @@ const Signup = () => {
           <motion.button
             type="submit"
             disabled={isLoading}
-            className="w-full mt-6 bg-linear-to-r from-pink-600 to-purple-600 text-white font-semibold py-3 rounded-xl relative overflow-hidden"
+            className="w-full mt-6 bg-linear-to-r from-pink-600 to-pink-600 text-white font-semibold py-3 rounded-xl relative overflow-hidden"
             variants={buttonVariants}
             initial="idle"
             whileHover="hover"

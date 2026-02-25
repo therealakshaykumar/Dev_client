@@ -43,7 +43,7 @@ const Login = () => {
   };
 
   return (
-    <div className=" min-h-screen flex items-center justify-center bg-linear-to-br from-pink-50 to-purple-50 px-4">
+    <div className=" min-h-screen flex items-center justify-center bg-linear-to-br from-pink-50 to-pink-50 px-4">
       <motion.div
         className="absolute top-25 left-10 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
         animate={{
@@ -119,7 +119,7 @@ const Login = () => {
           {/* Submit Button */}
           <motion.button
             type="submit"
-            className="w-full mt-6 bg-linear-to-r from-pink-600 to-purple-600 text-white font-semibold py-2 rounded-lg hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+            className="w-full mt-6 bg-linear-to-r from-pink-600 to-pink-600 text-white font-semibold py-2 rounded-lg hover:shadow-lg transition-shadow duration-200 cursor-pointer"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             initial={{ opacity: 0 }}

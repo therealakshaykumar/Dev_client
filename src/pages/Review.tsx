@@ -221,7 +221,7 @@ const Review = () => {
         >
           <motion.div className="relative w-32 h-32 mx-auto mb-8">
             <motion.div
-              className="absolute inset-0 bg-linear-to-br from-violet-100 to-purple-100 rounded-full"
+              className="absolute inset-0 bg-linear-to-br from-pink-100 to-pink-100 rounded-full"
               animate={{
                 scale: [1, 1.05, 1],
                 opacity: [0.5, 0.8, 0.5],
@@ -234,7 +234,7 @@ const Review = () => {
               whileHover="hover"
             >
               <svg
-                className="w-12 h-12 text-violet-400"
+                className="w-12 h-12 text-pink"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -265,7 +265,7 @@ const Review = () => {
 
           <motion.button
             onClick={() => navigate("/feed")}
-            className="group relative inline-flex items-center gap-2 bg-linear-to-r from-violet-500 to-purple-600 text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-violet-500/30"
+            className="group relative inline-flex items-center gap-2 bg-linear-to-r from-pink to-pink text-white px-8 py-3 rounded-full font-medium shadow-lg shadow-violet-500/30"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -304,7 +304,7 @@ const Review = () => {
           animate="visible"
         >
           <motion.h1
-            className="text-2xl md:text-3xl font-bold text-gray-800"
+            className="text-2xl md:text-3xl font-bold text-pink-800"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
@@ -389,8 +389,7 @@ const Review = () => {
                   <div className="flex-1 min-w-0">
                     <motion.h3
                       className="text-base md:text-xl font-semibold text-gray-800 truncate"
-                      whileHover={{ color: "#7C3AED", x: 5 }}
-                      transition={{ duration: 0.2 }}
+                      whileHover={{ color: "#8B0A50" }}
                     >
                       {request.fromUserId?.firstName}{" "}
                       {request.fromUserId?.lastName}

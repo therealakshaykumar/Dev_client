@@ -161,7 +161,8 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <img className="w-6 h-6" src="/logo.svg" alt="" /><span>GiTogether</span>
+          <img className="w-6 h-6" src="/logo.svg" alt="" />
+          <span>GiTogether</span>
         </motion.a>
       </div>
 
@@ -266,7 +267,7 @@ const Navbar = () => {
                           className="w-12 h-12 rounded-full object-cover"
                         />
                         <div className="flex-1 min-w-0">
-                          <p className="font-semibold text-gray-800 truncate">
+                          <p className="font-semibold text-pink-800 truncate">
                             {user.firstName} {user.lastName}
                           </p>
                           <p className="text-sm text-gray-500 truncate">
@@ -315,7 +316,7 @@ const Navbar = () => {
                           navigate("/connections");
                         }}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-pink-500/10 to-pink-500/10 flex items-center justify-center">
                           <svg
                             className="w-4 h-4 text-blue-500"
                             fill="none"
@@ -343,7 +344,7 @@ const Navbar = () => {
                           navigate("/requests");
                         }}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-purple-500/10 to-indigo-500/10 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-pink-500/10 to-pink-500/10 flex items-center justify-center">
                           <svg
                             className="w-4 h-4 text-purple-500"
                             fill="none"
@@ -376,7 +377,7 @@ const Navbar = () => {
                           navigate("/review");
                         }}
                       >
-                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-purple-500/10 to-indigo-500/10 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-pink-500/10 to-pink-500/10 flex items-center justify-center">
                           <svg
                             className="w-4 h-4 text-purple-500"
                             fill="none"

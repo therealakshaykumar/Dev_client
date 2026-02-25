@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-pink: #fe3c72;
-  --color-orange: #fd5564;
+  --color-pink: #8B0A50;
+  --color-orange: #8B0A50;
 }
 
 *{

@@ -108,7 +108,7 @@ const Chat = () => {
   };
 
   return (
-    <div className="flex flex-col mt-20 h-[calc(100vh-100px)] bg-orange-100 max-w-2xl mx-auto border-x border-gray-200 overflow-hidden">
+    <div className="flex flex-col mt-20 h-[calc(100vh-100px)] bg-pink-100 max-w-2xl mx-auto border-x border-gray-200 overflow-hidden">
       {/* Header */}
       <motion.div
         initial={{ y: -20, opacity: 0 }}
@@ -174,7 +174,7 @@ const Chat = () => {
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-[#f0f0f0] p-3 flex items-center gap-2 border-t border-gray-200"
+        className="bg-pink-100 p-3 flex items-center gap-2 border-t border-gray-200"
       >
         <input
           type="text"

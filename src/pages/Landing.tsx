@@ -1,5 +1,3 @@
-// src/pages/Landing.tsx
-
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "zustand";
@@ -9,9 +7,9 @@ import { useEffect } from "react";
 const Landing = () => {
   const navigate = useNavigate();
   const { user } = useStore(userStore);
-
-  // Redirect to feed if already logged in
+  
   useEffect(() => {
+    console.log("Current user:", user);
     if (user) {
       navigate("/feed");
     }
@@ -20,7 +18,6 @@ const Landing = () => {
   return (
     <div className="min-h-screen relative overflow-hidden bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
       
-      {/* Animated Background Blobs */}
       <motion.div
         className="absolute top-20 left-10 w-72 h-72 bg-pink rounded-full blur-xl opacity-10"
         animate={{
@@ -136,7 +133,7 @@ const Landing = () => {
             onClick={() => navigate("/login")}
             className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full border border-white/20 hover:bg-white/20 transition-colors"
           >
-            Sign In
+            {user ? "Feed" : 'Sign In'}
           </motion.button>
         </motion.div>
 

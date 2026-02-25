@@ -122,7 +122,7 @@ const Feed = () => {
         >
           <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-linear-to-br from-pink-100 to-purple-100 flex items-center justify-center">
             <svg
-              className="w-16 h-16 text-pink-400"
+              className="w-16 h-16 text-pink"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -263,12 +263,12 @@ const Feed = () => {
                       <div className="flex items-center justify-center gap-6 pt-4">
                         <motion.button
                           onClick={() => handleSwipe("left")}
-                          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-red-400 flex items-center justify-center shadow-lg"
+                          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-pink-400 flex items-center justify-center shadow-lg"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
                           <svg
-                            className="w-7 h-7 sm:w-8 sm:h-8 text-red-500"
+                            className="w-7 h-7 sm:w-8 sm:h-8 text-pink-500"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -282,7 +282,7 @@ const Feed = () => {
                           </svg>
                         </motion.button>
 
-                        <motion.button
+                        {/* <motion.button
                           onClick={() => handleSwipe("right")}
                           className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-linear-to-r from-pink-500 to-rose-500 flex items-center justify-center shadow-lg shadow-pink-500/30"
                           whileHover={{ scale: 1.1 }}
@@ -295,16 +295,16 @@ const Feed = () => {
                           >
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                           </svg>
-                        </motion.button>
+                        </motion.button> */}
 
                         <motion.button
                           onClick={() => handleSwipe("left")}
-                          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-yellow-400 flex items-center justify-center shadow-lg"
+                          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white border-2 border-pink-400 flex items-center justify-center shadow-lg"
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                         >
                           <svg
-                            className="w-7 h-7 sm:w-8 sm:h-8 text-yellow-500"
+                            className="w-7 h-7 sm:w-8 sm:h-8 text-pink-500"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
