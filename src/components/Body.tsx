@@ -2,11 +2,13 @@ import { Outlet, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useStore } from "zustand";
 import { userStore } from "../store/userStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { apiClient } from "../utils/axios";
+import BirthdayBanner from "./BirthdayBanner";
 
 const Body = () => {
   const { user, setUser, setIsLoading, isLoading } = useStore(userStore);
+  const [isBirthday, setIsBirthday] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +19,8 @@ const Body = () => {
       }
 
       try {
+        const isBirthdayToday = await apiClient.get("/user/birthday-today");
+        setIsBirthday(isBirthdayToday.data.isBirthday);
         const res = await apiClient.get("/user/profile");
         const userData = res.data.user || res.data;
         if (userData && userData._id) {
@@ -51,6 +55,7 @@ const Body = () => {
 
   return (
     <div>
+      {isBirthday && user && <BirthdayBanner userName={user?.name} />}
       <Navbar />
       <Outlet />
     </div>
